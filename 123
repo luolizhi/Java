@@ -1,1 +1,21 @@
-111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+#!/usr/bin/python
+# coding:utf-8
+# unicode=utf-8
+
+from PIL import Image
+# from __future__ import print_function
+
+img =Image.open(r'C:\Users\lukey\Pictures\picture\IMG_20160319_001.jpg')
+xsize,ysize=img.size
+print xsize
+print ysize
+
+#裁剪模板区域由4-tuple决定，该tuple中信息为(left, upper, right, lower)
+region =(0,200,xsize,ysize)
+
+cropImg=img.crop(region)
+
+cropImg.save(r'C:\Users\lukey\Pictures\picture\001.jpg')
+
+print(img.format,img.size,img.mode)
+print(cropImg.format,cropImg.size,cropImg.mode)
